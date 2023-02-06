@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-        <title>Welcome to Titanium</title>
+        <title>Welcome to Syndika</title>
         <style>
         body,
         html {
@@ -15,9 +15,8 @@
             font-family: 'Montserrat', sans-serif;
             padding-top: 15px;
             padding-bottom: 15px;
-            color: #001996;
             height: 100%;
-            background: #ededed;
+            background: #ffff;
         }
 
         .main-logo {
@@ -77,7 +76,7 @@
     <body>
         <div class="container col-md-8 col-xs-4">
             <div class="jumbotron bg-transparent pt-0 mb-2">
-              <img src="/syndika_logo.png" class="rounded mx-auto d-block main-logo" alt="logo">
+              <img src="https://welcome.syndika.io/syndika_logo.png" width="300px" class="rounded mx-auto d-block main-logo" alt="logo">
                 <span class="black-text">Hi,</span> <span class="blue-text" id='firsName'></span>
                 <p class="black-text mt-4">
                 Welcome to our team. Please find in the table below your "key" to the company resources.
@@ -125,7 +124,7 @@
             </div>
         </div>
         <script>
-            function replaceValues(f = 'Ivan', l = 'Sidorov') {
+            function replaceValues(f = 'Brad', l = 'Pitt') {
                 let firstName = f[0].toUpperCase() + f.substr(1, f.length - 1).toLowerCase()
                 const login = `${f.toLowerCase()}.${l.toLowerCase()}`
                 const email = `${login}@syndika.co`
@@ -134,8 +133,8 @@
                 // document.getElementById('login').innerHTML = login
             }
             const url = new URL(window.location.href);
-            const f = (null !== url.searchParams.get("f")) ? url.searchParams.get("f").replace(/ /g, '') : 'Ivan';
-            const l = (null !== url.searchParams.get("l")) ? url.searchParams.get("l").replace(/ /g, '') : 'Sidorov';
+            const f = (null !== url.searchParams.get("f")) ? url.searchParams.get("f").replace(/ /g, '') : 'Brad';
+            const l = (null !== url.searchParams.get("l")) ? url.searchParams.get("l").replace(/ /g, '') : 'Pitt';
             replaceValues(f, l)
         </script>
     </body>
