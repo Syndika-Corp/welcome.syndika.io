@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <title>Welcome to Titanium</title>
+        <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            color: #000;
+            height: 100%;
+            background: #fff;
+        }
+
+        .main-logo {
+        transform: scale(0.6);
+          margin-bottom: 50px;
+        }
+
+        .blue-text {
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 20px;
+            color: #264FC0;
+            position: relative;
+            line-height: 38px;
+        }
+
+        .blue-text:before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            font-weight: 100;
+        }
+
+        .black-text {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .black-text a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #264FC0;
+        }
+
+        .black-text a:before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            font-weight: 100;
+        }
+
+        .blue-text-small {
+            color: #264FC0;
+        }
+        
+        li {
+            padding-top: 15px;;
+        }
+
+        .space {
+            height: 10px;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container col-md-8 col-xs-4">
+            <div class="jumbotron bg-transparent pt-0 mb-2">
+              <img src="https://titanium-tech.net/wp-content/uploads/2021/09/logo.png" class="rounded mx-auto d-block main-logo" alt="logo">
+                <span class="black-text">Hi,</span> <span class="blue-text" id='firsName'></span>
+                <p class="black-text mt-4">
+                Welcome to our team. Please find in the table below your "key" to the company resources.
+                </p>
+                <p class="lead pb-2">
+                <div class="row">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <table class="table table-light" style="width: auto">
+                            
+                            <tr>
+                                <td>Email</td>
+                                <td id="email"></td>
+                            </tr>
+                            <!-- <tr>
+                                <td>Login</td>
+                                <td id="login"></td>
+                            </tr> -->
+                            <tr>
+                                <td>Password</td>
+                                <td>password</td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                </div>
+                </p>
+                <h3 class="blue-text">Instruction</h3>
+                <ul class="black-text">
+                    <li>Open <a href="https://accounts.google.com" target="_blank">accounts.google.com</a> and log in with email and password provided above.</li>
+                    <li>In your working e-mail you will see an invitation to join <span class="blue-text-small">People Force</span> - an HRM system that will help you interact with our collegues,  create days off requests and get company news. Please fill all needed fields and upload your real photo.</li>
+                    <li>Also, in e-mail you will see an invitation to join our <span class="blue-text-small">Slack</span>. Please, register using your name and surname (Example: "Ivan Sidorov") and add your photo (not the photo of your pet, please)
+                    <li>All info about our company, internal rules and policies you always can find in our common knowledge base <a href="https://docs.titanium-tech.net/collection/titanium-general-zjybsZ2G2Y" target="_blank">Titanium Docs</a> and log in with your working email. During your Onboarding HR will add you in office groups.</li>
+                    <br><div class="space"></div>
+                </ul>
+                <p class="float-right mt-4 black-text">
+                    With love,<br />
+                    HR team :)
+                </p>
+            </div>
+        </div>
+        <script>
+            function replaceValues(f = 'Ivan', l = 'Sidorov') {
+                let firstName = f[0].toUpperCase() + f.substr(1, f.length - 1).toLowerCase()
+                const login = `${f.toLowerCase()}.${l.toLowerCase()}`
+                const email = `${login}@titanium-tech.net`
+                document.getElementById('firsName').innerHTML = firstName
+                document.getElementById('email').innerHTML = email
+                // document.getElementById('login').innerHTML = login
+            }
+            const url = new URL(window.location.href);
+            const f = (null !== url.searchParams.get("f")) ? url.searchParams.get("f").replace(/ /g, '') : 'Ivan';
+            const l = (null !== url.searchParams.get("l")) ? url.searchParams.get("l").replace(/ /g, '') : 'Sidorov';
+            replaceValues(f, l)
+        </script>
+    </body>
+</html>
