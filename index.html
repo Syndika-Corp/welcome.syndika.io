@@ -77,7 +77,7 @@
     <body>
         <div class="container col-md-8 col-xs-4">
             <div class="jumbotron bg-transparent pt-0 mb-2">
-              <img src="https://titanium-tech.net/wp-content/uploads/2021/09/logo.png" class="rounded mx-auto d-block main-logo" alt="logo">
+              <img src="https://thumb.tildacdn.com/tild3630-6166-4566-b666-323834326362/-/resize/360x/-/format/webp/Syndika-white-300x83.png" class="rounded mx-auto d-block main-logo" alt="logo">
                 <span class="black-text">Hi,</span> <span class="blue-text" id='firsName'></span>
                 <p class="black-text mt-4">
                 Welcome to our team. Please find in the table below your "key" to the company resources.
@@ -107,14 +107,20 @@
                 <h3 class="blue-text">Instruction</h3>
                 <ul class="black-text">
                     <li>Open <a href="https://accounts.google.com" target="_blank">accounts.google.com</a> and log in with email and password provided above.</li>
-                    <li>In your working e-mail you will see an invitation to join <span class="blue-text-small">People Force</span> - an HRM system that will help you interact with our collegues,  create days off requests and get company news. Please fill all needed fields and upload your real photo.</li>
-                    <li>Also, in e-mail you will see an invitation to join our <span class="blue-text-small">Slack</span>. Please, register using your name and surname (Example: "Ivan Sidorov") and add your photo (not the photo of your pet, please)
-                    <li>All info about our company, internal rules and policies you always can find in our common knowledge base <a href="https://docs.titanium-tech.net/collection/titanium-general-zjybsZ2G2Y" target="_blank">Titanium Docs</a> and log in with your working email. During your Onboarding HR will add you in office groups.</li>
+                    <li>In your corporate e-mail you will see an invitation to join our <span class="blue-text-small">Slack</span>. Please, register using your name and surname (Example: "Ivan Sidorov") and add your photo (not the photo of your pet, please)
+                    <br><div class="space"></div>
+                    Automatically you will be added in the following Slack's chats:
+                    <br>
+                    <span class="blue-text-small">#general</span> - our global chat, which we use for sharing important news, official days off, company’s updates.
+                    <br>
+                    <span class="blue-text-small">#random</span> - we use it for internal communication and publish there Birthdays&Anniversarries greetings and other staff like this.</li>
+                </ul>
+                    <li>All info about our company, internal rules and policies you always can find in our common knowledge base <a href="https://docs.syndika.io/home" target="_blank">Syndika Docs</a> and log in with your working email. During your Onboarding HR will add you in office groups.</li>
                     <br><div class="space"></div>
                 </ul>
                 <p class="float-right mt-4 black-text">
                     With love,<br />
-                    HR team :)
+                    your HR Manager - Kate :)
                 </p>
             </div>
         </div>
@@ -122,7 +128,7 @@
             function replaceValues(f = 'Ivan', l = 'Sidorov') {
                 let firstName = f[0].toUpperCase() + f.substr(1, f.length - 1).toLowerCase()
                 const login = `${f.toLowerCase()}.${l.toLowerCase()}`
-                const email = `${login}@titanium-tech.net`
+                const email = `${login}@syndika.co`
                 document.getElementById('firsName').innerHTML = firstName
                 document.getElementById('email').innerHTML = email
                 // document.getElementById('login').innerHTML = login
