@@ -96,16 +96,7 @@
         /* max-width: 320px; */
         grid-template-columns: 1fr;
       }
-      @media (max-width: 1250px) {
-        .form {
-          grid-template-columns: 1fr;
-        }
-      }
-      @media (max-width: 768px) {
-        .form {
-          grid-template-columns: 1fr;
-        }
-      }
+
       .form-row {
         flex: 1;
         display: flex;
@@ -157,12 +148,29 @@
         border-radius: 8px;
         background: white;
       }
+      .credentials {
+        font-size: 16px;
+      }
+      @media (max-width: 768px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+        .table {
+          font-size: 14px;
+        }
+        .black-text {
+          font-size: 14px;
+        }
+      }
+      .container {
+        max-width: 1000px;
+      }
     </style>
   </head>
 
   <body>
-    <div class="container col-md-8 col-xs-4">
-      <div class="jumbotron bg-transparent pt-0 mb-2 pt-2">
+    <div class="container">
+      <div class="bg-transparent pt-0 mb-2 pt-2">
         <img
           src="https://welcome.syndika.io/syndika_logo.png"
           width="300px"
@@ -178,8 +186,11 @@
               the company resources.
             </p>
             <p class="lead pb-2"></p>
-            <div class="row lead pb-2">
-              <div class="col-md-12 d-flex justify-content-center">
+            <div class="row lead pb-2 credentials">
+              <div
+                class="d-flex justify-content-center"
+                style="margin: 0px auto"
+              >
                 <table class="table table-light" style="width: auto">
                   <tr>
                     <td>Email</td>
