@@ -29,15 +29,15 @@
         padding: 0;
         margin: 0;
         font-family: "Montserrat", sans-serif;
-        padding-top: 15px;
-        padding-bottom: 15px;
-        height: 100%;
-        background: #ffff;
+        /* padding-top: 15px;
+        padding-bottom: 15px; */
+        /* height: 100%; */
+        background: rgba(0, 0, 0, 0.05);
       }
 
       .main-logo {
         transform: scale(0.6);
-        margin-bottom: 50px;
+        margin: 25px 0px;
       }
 
       .blue-text {
@@ -89,15 +89,16 @@
       .form {
         padding-left: 16px;
         display: grid;
+        margin-top: 15px;
         /* flex-wrap: wrap; */
         /* flex-direction: column; */
         gap: 16px;
         /* max-width: 320px; */
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
       }
       @media (max-width: 1250px) {
         .form {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
         }
       }
       @media (max-width: 768px) {
@@ -113,8 +114,8 @@
         gap: 8px;
         font-weight: bold;
         font-size: 14px;
-        min-width: 240px;
-        max-width: 320px;
+        /* min-width: 240px; */
+        /* max-width: 320px; */
       }
 
       .form-input {
@@ -144,197 +145,232 @@
       .signature {
         display: none;
       }
+      .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        margin-bottom: 32px;
+      }
+      .content > div {
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        padding: 32px;
+        border-radius: 8px;
+        background: white;
+      }
     </style>
   </head>
 
   <body>
     <div class="container col-md-8 col-xs-4">
-      <div class="jumbotron bg-transparent pt-0 mb-2">
+      <div class="jumbotron bg-transparent pt-0 mb-2 pt-2">
         <img
           src="https://welcome.syndika.io/syndika_logo.png"
           width="300px"
           class="rounded mx-auto d-block main-logo"
           alt="logo"
         />
-        <span class="black-text">Hi,</span>
-        <span class="blue-text" id="firsName"></span>
-        <p class="black-text mt-4">
-          Welcome to our team. Please find in the table below your "key" to the
-          company resources.
-        </p>
-        <p class="lead pb-2"></p>
-        <div class="row lead pb-2">
-          <div class="col-md-12 d-flex justify-content-center">
-            <table class="table table-light" style="width: auto">
-              <tr>
-                <td>Email</td>
-                <td id="email"></td>
-              </tr>
-              <!-- <tr>
-                                <td>Login</td>
-                                <td id="login"></td>
-                            </tr> -->
-              <tr>
-                <td>Password</td>
-                <td>password</td>
-              </tr>
-            </table>
+        <div class="content">
+          <div>
+            <span class="black-text">Hi,</span>
+            <span class="blue-text" id="firsName"></span>
+            <p class="black-text mt-4">
+              Welcome to our team. Please find in the table below your "key" to
+              the company resources.
+            </p>
+            <p class="lead pb-2"></p>
+            <div class="row lead pb-2">
+              <div class="col-md-12 d-flex justify-content-center">
+                <table class="table table-light" style="width: auto">
+                  <tr>
+                    <td>Email</td>
+                    <td id="email"></td>
+                  </tr>
+                  <!-- <tr>
+                                    <td>Login</td>
+                                    <td id="login"></td>
+                                </tr> -->
+                  <tr>
+                    <td>Password</td>
+                    <td>password</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <h3 class="blue-text">Instruction</h3>
+            <ul class="black-text">
+              <li>
+                Open
+                <a href="https://accounts.google.com" target="_blank"
+                  >accounts.google.com</a
+                >
+                and log in with email and password provided above.
+              </li>
+              <li>
+                In your corporate e-mail you will see an invitation to join our
+                <span class="blue-text-small">Slack</span>. Please, register
+                using your name and surname (Example: "Brad Pitt") and add your
+                photo (not the photo of your pet, please) <br />
+                <div class="space"></div>
+                Automatically you will be added in the following Slack's chats:
+                <br />
+                <span class="blue-text-small">#general</span> - our global chat,
+                which we use for sharing important news, official days off,
+                company’s updates.
+                <br />
+                <span class="blue-text-small">#random</span> - we use it for
+                internal communication and publish there
+                Birthdays&Anniversarries greetings and other staff like this.
+              </li>
+              <li>
+                All info about our company, internal rules and policies you
+                always can find in our common knowledge base
+                <a
+                  href="https://docs.syndika.io/home"
+                  target="_blank"
+                  class="blue-text-small"
+                  >Syndika Docs</a
+                >
+                and log in with your working email. During your Onboarding HR
+                will add you in office groups.
+              </li>
+              <br />
+              <div class="space"></div>
+            </ul>
           </div>
-        </div>
-        <h3 class="blue-text">Instruction</h3>
-        <ul class="black-text">
-          <li>
-            Open
-            <a href="https://accounts.google.com" target="_blank"
-              >accounts.google.com</a
+          <div>
+            <h3 class="blue-text">Generate your signature</h3>
+
+            <form
+              name="signature"
+              action=""
+              method="GET"
+              onsubmit="return false"
             >
-            and log in with email and password provided above.
-          </li>
-          <li>
-            In your corporate e-mail you will see an invitation to join our
-            <span class="blue-text-small">Slack</span>. Please, register using
-            your name and surname (Example: "Brad Pitt") and add your photo (not
-            the photo of your pet, please) <br />
-            <div class="space"></div>
-            Automatically you will be added in the following Slack's chats:
-            <br />
-            <span class="blue-text-small">#general</span> - our global chat,
-            which we use for sharing important news, official days off,
-            company’s updates.
-            <br />
-            <span class="blue-text-small">#random</span> - we use it for
-            internal communication and publish there Birthdays&Anniversarries
-            greetings and other staff like this.
-          </li>
-          <li>
-            All info about our company, internal rules and policies you always
-            can find in our common knowledge base
-            <a
-              href="https://docs.syndika.io/home"
-              target="_blank"
-              class="blue-text-small"
-              >Syndika Docs</a
-            >
-            and log in with your working email. During your Onboarding HR will
-            add you in office groups.
-          </li>
-          <br />
-          <div class="space"></div>
-        </ul>
-        <h3 class="blue-text">Generate your signature</h3>
+              <div class="form">
+                <div class="form-row">
+                  Full Name:
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    class="form-input"
+                    placeholder="Your first and last name"
+                  />
+                </div>
+                <div class="form-row">
+                  Job Title:
+                  <input
+                    type="text"
+                    name="job"
+                    class="form-input"
+                    placeholder="Your job title"
+                  />
+                </div>
+                <div class="form-row">
+                  Phone Number:
+                  <input
+                    type="number"
+                    name="phoneNumber"
+                    class="form-input"
+                    placeholder="+000 00 000 0000"
+                  />
+                </div>
+                <div class="form-row">
+                  E-mail Address:
+                  <input
+                    type="text"
+                    name="email"
+                    class="form-input"
+                    placeholder="hey@syndika.co"
+                  />
+                </div>
+                <div class="form-row">
+                  Aditional E-mail Address:
+                  <input
+                    type="text"
+                    name="secondaryEmail"
+                    class="form-input"
+                    placeholder="hey@syndika.co"
+                  />
+                </div>
+                <div class="form-row">
+                  Schedule a Call:
+                  <input
+                    type="text"
+                    name="callUrl"
+                    class="form-input"
+                    placeholder="Link"
+                  />
+                </div>
+                <div class="form-row">
+                  LinkedIn:
+                  <input
+                    type="text"
+                    name="linkedin"
+                    class="form-input"
+                    placeholder="Link to your LinkedIn account"
+                  />
+                </div>
+                <div class="form-row">
+                  WhatsApp:
+                  <input
+                    type="text"
+                    name="whatsapp"
+                    class="form-input"
+                    placeholder="+000 00 000 0000"
+                  />
+                </div>
+                <div class="form-row">
+                  Telegram:
+                  <input
+                    type="text"
+                    name="telegram"
+                    class="form-input"
+                    placeholder="+000 00 000 0000 or Username"
+                  />
+                </div>
+              </div>
 
-        <form name="signature" action="" method="GET" onsubmit="return false">
-          <div class="form">
-            <div class="form-row">
-              Full Name:
-              <input
-                type="text"
-                name="fullName"
-                class="form-input"
-                placeholder="Your first and last name"
-              />
+              <button
+                type="button"
+                onclick="generateSignature(this.form)"
+                class="submit-button"
+              >
+                Generate
+              </button>
+              <a
+                href="https://docs.google.com/document/d/1IRzFLr_wpdRto_JAL4dWDHSlhT_nzHAMwS-5F4VPAiE"
+                target="_blank"
+                >How to use it?</a
+              >
+            </form>
+
+            <div id="signature" style="display: none; margin: 36px 16px 0px">
+              <div style="float: left; margin-right: 16px">
+                <img
+                  src="https://syndika.co/wp-content/uploads/2023/03/Syndika-symbol.png"
+                  alt="logo"
+                  width="46px"
+                  height="46px"
+                />
+              </div>
+              <div
+                style="
+                  font-size: 10pt;
+                  font-family: Verdana;
+                  padding-left: 62px;
+                "
+                id="signatureInfo"
+              ></div>
             </div>
-            <div class="form-row">
-              Job Title:
-              <input
-                type="text"
-                name="job"
-                class="form-input"
-                placeholder="Your job title"
-              />
-            </div>
-            <div class="form-row">
-              Phone Number:
-              <input
-                type="number"
-                name="phoneNumber"
-                class="form-input"
-                placeholder="+000 00 000 0000"
-              />
-            </div>
-            <div class="form-row">
-              E-mail Address:
-              <input
-                type="text"
-                name="email"
-                class="form-input"
-                placeholder="hey@syndika.co"
-              />
-            </div>
-            <div class="form-row">
-              Aditional E-mail Address:
-              <input
-                type="text"
-                name="secondaryEmail"
-                class="form-input"
-                placeholder="hey@syndika.co"
-              />
-            </div>
-            <div class="form-row">
-              Schedule a Call:
-              <input
-                type="text"
-                name="callUrl"
-                class="form-input"
-                placeholder="Link"
-              />
-            </div>
-            <div class="form-row">
-              LinkedIn:
-              <input
-                type="text"
-                name="linkedin"
-                class="form-input"
-                placeholder="Link to your LinkedIn account"
-              />
-            </div>
-            <div class="form-row">
-              WhatsApp:
-              <input
-                type="text"
-                name="whatsapp"
-                class="form-input"
-                placeholder="+000 00 000 0000"
-              />
-            </div>
-            <div class="form-row">
-              Telegram:
-              <input
-                type="text"
-                name="telegram"
-                class="form-input"
-                placeholder="+000 00 000 0000"
-              />
+
+            <div id="noSignature" style="display: none; margin: 36px 16px 0px">
+              Nothing to generate
             </div>
           </div>
-
-          <button
-            type="button"
-            onclick="generateSignature(this.form)"
-            class="submit-button"
-          >
-            Generate
-          </button>
-        </form>
-        <div id="signature" style="display: none; margin: 36px 16px 0px">
-          <div style="float: left; margin-right: 16px">
-            <img
-              src="https://syndika.co/wp-content/uploads/2023/03/Syndika-symbol.png"
-              alt="logo"
-              width="46px"
-              height="46px"
-            />
-          </div>
-          <div
-            style="font-size: 10pt; font-family: Verdana; padding-left: 62px"
-            id="signatureInfo"
-          ></div>
         </div>
 
-        <div id="noSignature" style="display: none; margin: 36px 16px 0px">
-          Nothing to generate
-        </div>
-        <p class="float-right mt-4 pb-4 black-text">
+        <p class="float-right black-text">
           With love,<br />
           your HR Manager - Kate :)
         </p>
@@ -466,6 +502,9 @@
         const email = `${login}@syndika.co`;
         document.getElementById("firsName").innerHTML = firstName;
         document.getElementById("email").innerHTML = email;
+        document.getElementById("fullName").value = `${f ? f : ""}${
+          l ? ` ${l}` : ""
+        }`;
         // document.getElementById('login').innerHTML = login
       }
       const url = new URL(window.location.href);
